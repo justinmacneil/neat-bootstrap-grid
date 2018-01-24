@@ -6,3 +6,59 @@ MIT License
 */
 
 @import "../bower_components/neat/core/neat";
+
+$grid-columns:      12 !default;
+$grid-gutter-width: 30px !default;
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+) !default;
+
+$neat-grid: (
+	columns: $grid-columns,
+	gutter: $grid-gutter-width,
+	color: rgba(255, 0, 0, 0.25),
+);
+
+.row {
+	@include grid-container;
+	@include grid-visual;
+	.row {
+		@include grid-collapse;
+	}
+}
+
+.container {
+	width: 100%;
+	padding-right: ($grid-gutter-width / 2);
+	padding-left: ($grid-gutter-width / 2);
+	margin-right: auto;
+	margin-left: auto;
+}
+
+@for $i from 1 through $grid-columns {
+	.col-#{$i} {
+		@include grid-column($i);
+	}
+}
+
+@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
+	@media(min-width: $grid-breakpoint-width) {
+		@for $i from 1 through $grid-columns {
+			.col-#{$grid-breakpoint}-#{$i} {
+				@include grid-column($i);
+			}
+		}
+		
+		.container {
+			width: 100%;
+			padding-right: ($grid-gutter-width / 2);
+			padding-left: ($grid-gutter-width / 2);
+			margin-right: auto;
+			margin-left: auto;
+		}
+	}
+}
