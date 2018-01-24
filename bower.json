@@ -1,0 +1,21 @@
+{
+  "name": "neat-bootstrap-grid",
+  "homepage": "https://github.com/justinmacneil/neat-bootstrap-grid",
+  "authors": [
+    "justinmacneil <hello@justinmacneil.ca>"
+  ],
+  "description": "Bootstrap-style grid classes using Neat",
+  "main": "core/_neat-bootstrap-grid.scss",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "neat": "^2.1.0"
+  }
+}
