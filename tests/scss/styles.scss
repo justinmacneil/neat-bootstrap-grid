@@ -18,8 +18,10 @@ $neat-grid: (
 
 .row {
 	@include grid-container;
-	@include grid-collapse;
 	@include grid-visual;
+	.row {
+		@include grid-collapse;
+	}
 }
 
 .container {
