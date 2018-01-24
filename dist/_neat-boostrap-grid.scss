@@ -17,15 +17,57 @@ $grid-breakpoints: (
 	xl: 1200px,
 ) !default;
 
+$grid-max-widths: (
+	xs: none,
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+) !default;
+
+$grid-gutter-widths: (
+	xs: 10px,
+	sm: 10px,
+	md: 20px,
+	lg: 30px,
+	xl: 30px,
+) !default;
+
 $neat-grid: (
 	columns: $grid-columns,
 	gutter: $grid-gutter-width,
-	color: rgba(255, 0, 0, 0.25),
 );
+
+$neat-grids: (
+	xs: (
+		columns: $grid-columns,
+		gutter: map-get($grid-gutter-widths, xs),
+		media: 0px
+	),
+	sm: (
+		columns: $grid-columns,
+		gutter: map-get($grid-gutter-widths, sm),
+		media: 540px
+	),
+	md: (
+		columns: $grid-columns,
+		gutter: map-get($grid-gutter-widths, md),
+		media: 720px
+	),
+	lg: (
+		columns: $grid-columns,
+		gutter: map-get($grid-gutter-widths, lg),
+		media: 960px
+	),
+	xl: (
+		columns: $grid-columns,
+		gutter: map-get($grid-gutter-widths, xl),
+		media: 1140px
+	)
+) !default;
 
 .row {
 	@include grid-container;
-	@include grid-visual;
 	.row {
 		@include grid-collapse;
 	}
@@ -33,8 +75,10 @@ $neat-grid: (
 
 .container {
 	width: 100%;
-	padding-right: ($grid-gutter-width / 2);
-	padding-left: ($grid-gutter-width / 2);
+	@media (min-width: map-get($grid-breakpoints, sm)) {
+		padding-right: ($grid-gutter-width / 2);
+		padding-left: ($grid-gutter-width / 2);
+	}
 	margin-right: auto;
 	margin-left: auto;
 }
@@ -46,19 +90,15 @@ $neat-grid: (
 }
 
 @each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
-	@media(min-width: $grid-breakpoint-width) {
+	@media (min-width: $grid-breakpoint-width) {
+		.container {
+			max-width: map-get($grid-max-widths, $grid-breakpoint);
+			@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint));
+		}
 		@for $i from 1 through $grid-columns {
 			.col-#{$grid-breakpoint}-#{$i} {
-				@include grid-column($i);
+				@include grid-column($i, map-get($neat-grids, $grid-breakpoint) );
 			}
-		}
-		
-		.container {
-			width: 100%;
-			padding-right: ($grid-gutter-width / 2);
-			padding-left: ($grid-gutter-width / 2);
-			margin-right: auto;
-			margin-left: auto;
 		}
 	}
 }
