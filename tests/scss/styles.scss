@@ -1,2 +1,88 @@
+$grid-columns:      12;
+$grid-gutter-width: 20px;
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px,
+);
+
+$grid-max-widths: (
+	xs: none,
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1440px,
+);
+
+$grid-gutter-widths: (
+	xs: 10px,
+	sm: 10px,
+	md: 20px,
+	lg: 20px,
+	xl: 20px,
+);
+
 @import "reset";
 @import "../../dist/_neat-boostrap-grid.scss";
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: sans-serif;
+}
+
+.logo {
+	background: rgba(0, 0, 0, 0.25);
+	padding: $grid-gutter-width;
+}
+
+.row {
+	@extend .clearfix;
+}
+
+.main-nav {
+	background: rgba(0, 0, 0, 0.125);
+	padding: $grid-gutter-width;
+	a {
+		color: #686262;
+		padding-right: $grid-gutter-width;
+		text-decoration: none;
+		text-transform: uppercase;
+	}
+	@media (min-width: map-get($grid-breakpoints, md)) {
+		@include grid-shift(6);
+	}
+	@media (min-width: map-get($grid-breakpoints, xl)) {
+		@include grid-shift(7);
+	}
+}
+
+main {
+	background: rgba(0, 0, 0, 0.125);
+	padding: $grid-gutter-width;
+}
+
+.grid-column-full {
+	box-sizing: content-box;
+	margin-left: 0 !important;
+	padding-left: $grid-gutter-width / 2 !important;
+	padding-right: $grid-gutter-width / 2 !important;
+}
+
+aside {
+	background: rgba(0, 0, 0, 0.25);
+	padding: $grid-gutter-width;
+}

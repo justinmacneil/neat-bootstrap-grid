@@ -50,83 +50,84 @@ Copyright 2018 Justin MacNeil
 https://justinmacneil.ca/
 MIT License
 */
-.row::after {
-  clear: both;
-  content: "";
-  display: block; }
-.row .row {
-  margin-left: -30px;
-  margin-right: -30px;
-  width: calc(100% + 60px); }
+@media (min-width: 576px) {
+  .row .row {
+    margin-left: -20px;
+    margin-right: -20px;
+    width: calc(100% + 40px); } }
 
 .container {
   width: 100%;
   margin-right: auto;
   margin-left: auto; }
+  .container::after {
+    clear: both;
+    content: "";
+    display: block; }
   @media (min-width: 576px) {
     .container {
-      padding-right: 15px;
-      padding-left: 15px; } }
+      padding-right: 10px;
+      padding-left: 10px; } }
 
 .col-1 {
-  width: calc(8.33333% - 32.5px);
+  width: calc(8.33333% - 21.66667px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-2 {
-  width: calc(16.66667% - 35px);
+  width: calc(16.66667% - 23.33333px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-3 {
-  width: calc(25% - 37.5px);
+  width: calc(25% - 25px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-4 {
-  width: calc(33.33333% - 40px);
+  width: calc(33.33333% - 26.66667px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-5 {
-  width: calc(41.66667% - 42.5px);
+  width: calc(41.66667% - 28.33333px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-6 {
-  width: calc(50% - 45px);
+  width: calc(50% - 30px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-7 {
-  width: calc(58.33333% - 47.5px);
+  width: calc(58.33333% - 31.66667px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-8 {
-  width: calc(66.66667% - 50px);
+  width: calc(66.66667% - 33.33333px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-9 {
-  width: calc(75% - 52.5px);
+  width: calc(75% - 35px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-10 {
-  width: calc(83.33333% - 55px);
+  width: calc(83.33333% - 36.66667px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-11 {
-  width: calc(91.66667% - 57.5px);
+  width: calc(91.66667% - 38.33333px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 .col-12 {
-  width: calc(100% - 60px);
+  width: calc(100% - 40px);
   float: left;
-  margin-left: 30px; }
+  margin-left: 20px; }
 
 @media (min-width: 0) {
   .container {
@@ -134,133 +135,61 @@ MIT License
     background-image: repeating-linear-gradient(to right, transparent, transparent 10px, rgba(255, 0, 0, 0.2) 10px, rgba(255, 0, 0, 0.2) calc(8.33333% - 10.83333px + 10px)); }
 
   .col-xs-1 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(8.33333% - 10.83333px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-2 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(16.66667% - 11.66667px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-3 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(25% - 12.5px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-4 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(33.33333% - 13.33333px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-5 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(41.66667% - 14.16667px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-6 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(50% - 15px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-7 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(58.33333% - 15.83333px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-8 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(66.66667% - 16.66667px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-9 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(75% - 17.5px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-10 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(83.33333% - 18.33333px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-11 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(91.66667% - 19.16667px);
     float: left;
     margin-left: 10px; }
 
   .col-xs-12 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(100% - 20px);
     float: left;
     margin-left: 10px; } }
@@ -270,133 +199,61 @@ MIT License
     background-image: repeating-linear-gradient(to right, transparent, transparent 10px, rgba(255, 0, 0, 0.2) 10px, rgba(255, 0, 0, 0.2) calc(8.33333% - 10.83333px + 10px)); }
 
   .col-sm-1 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(8.33333% - 10.83333px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-2 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(16.66667% - 11.66667px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-3 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(25% - 12.5px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-4 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(33.33333% - 13.33333px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-5 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(41.66667% - 14.16667px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-6 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(50% - 15px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-7 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(58.33333% - 15.83333px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-8 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(66.66667% - 16.66667px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-9 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(75% - 17.5px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-10 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(83.33333% - 18.33333px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-11 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(91.66667% - 19.16667px);
     float: left;
     margin-left: 10px; }
 
   .col-sm-12 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(100% - 20px);
     float: left;
     margin-left: 10px; } }
@@ -406,407 +263,239 @@ MIT License
     background-image: repeating-linear-gradient(to right, transparent, transparent 20px, rgba(255, 0, 0, 0.2) 20px, rgba(255, 0, 0, 0.2) calc(8.33333% - 21.66667px + 20px)); }
 
   .col-md-1 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(8.33333% - 21.66667px);
     float: left;
     margin-left: 20px; }
 
   .col-md-2 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(16.66667% - 23.33333px);
     float: left;
     margin-left: 20px; }
 
   .col-md-3 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(25% - 25px);
     float: left;
     margin-left: 20px; }
 
   .col-md-4 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(33.33333% - 26.66667px);
     float: left;
     margin-left: 20px; }
 
   .col-md-5 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(41.66667% - 28.33333px);
     float: left;
     margin-left: 20px; }
 
   .col-md-6 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(50% - 30px);
     float: left;
     margin-left: 20px; }
 
   .col-md-7 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(58.33333% - 31.66667px);
     float: left;
     margin-left: 20px; }
 
   .col-md-8 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(66.66667% - 33.33333px);
     float: left;
     margin-left: 20px; }
 
   .col-md-9 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(75% - 35px);
     float: left;
     margin-left: 20px; }
 
   .col-md-10 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(83.33333% - 36.66667px);
     float: left;
     margin-left: 20px; }
 
   .col-md-11 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(91.66667% - 38.33333px);
     float: left;
     margin-left: 20px; }
 
   .col-md-12 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
     width: calc(100% - 40px);
     float: left;
     margin-left: 20px; } }
 @media (min-width: 992px) {
   .container {
     max-width: 960px;
-    background-image: repeating-linear-gradient(to right, transparent, transparent 30px, rgba(255, 0, 0, 0.2) 30px, rgba(255, 0, 0, 0.2) calc(8.33333% - 32.5px + 30px)); }
+    background-image: repeating-linear-gradient(to right, transparent, transparent 20px, rgba(255, 0, 0, 0.2) 20px, rgba(255, 0, 0, 0.2) calc(8.33333% - 21.66667px + 20px)); }
 
   .col-lg-1 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(8.33333% - 32.5px);
+    width: calc(8.33333% - 21.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-2 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(16.66667% - 35px);
+    width: calc(16.66667% - 23.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-3 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(25% - 37.5px);
+    width: calc(25% - 25px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-4 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(33.33333% - 40px);
+    width: calc(33.33333% - 26.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-5 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(41.66667% - 42.5px);
+    width: calc(41.66667% - 28.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-6 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(50% - 45px);
+    width: calc(50% - 30px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-7 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(58.33333% - 47.5px);
+    width: calc(58.33333% - 31.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-8 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(66.66667% - 50px);
+    width: calc(66.66667% - 33.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-9 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(75% - 52.5px);
+    width: calc(75% - 35px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-10 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(83.33333% - 55px);
+    width: calc(83.33333% - 36.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-11 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(91.66667% - 57.5px);
+    width: calc(91.66667% - 38.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-lg-12 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     float: left;
-    margin-left: 30px; } }
+    margin-left: 20px; } }
 @media (min-width: 1200px) {
   .container {
-    max-width: 1140px;
-    background-image: repeating-linear-gradient(to right, transparent, transparent 30px, rgba(255, 0, 0, 0.2) 30px, rgba(255, 0, 0, 0.2) calc(8.33333% - 32.5px + 30px)); }
+    max-width: 1440px;
+    background-image: repeating-linear-gradient(to right, transparent, transparent 20px, rgba(255, 0, 0, 0.2) 20px, rgba(255, 0, 0, 0.2) calc(8.33333% - 21.66667px + 20px)); }
 
   .col-xl-1 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(8.33333% - 32.5px);
+    width: calc(8.33333% - 21.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-2 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(16.66667% - 35px);
+    width: calc(16.66667% - 23.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-3 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(25% - 37.5px);
+    width: calc(25% - 25px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-4 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(33.33333% - 40px);
+    width: calc(33.33333% - 26.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-5 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(41.66667% - 42.5px);
+    width: calc(41.66667% - 28.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-6 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(50% - 45px);
+    width: calc(50% - 30px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-7 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(58.33333% - 47.5px);
+    width: calc(58.33333% - 31.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-8 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(66.66667% - 50px);
+    width: calc(66.66667% - 33.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-9 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(75% - 52.5px);
+    width: calc(75% - 35px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-10 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(83.33333% - 55px);
+    width: calc(83.33333% - 36.66667px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-11 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(91.66667% - 57.5px);
+    width: calc(91.66667% - 38.33333px);
     float: left;
-    margin-left: 30px; }
+    margin-left: 20px; }
 
   .col-xl-12 {
-    /* @if($grid-breakpoint == 'xs') {
-    	outline: 1px solid red;
-    	@include grid-column($i, $neat-grid-xs);
-    } @else {
-    	@include grid-column($i, $my-custom-grid);
-    } */
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     float: left;
-    margin-left: 30px; } }
+    margin-left: 20px; } }
+.clearfix:after, .row:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0; }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: sans-serif; }
+
+.logo {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 20px; }
+
+.main-nav {
+  background: rgba(0, 0, 0, 0.125);
+  padding: 20px; }
+  .main-nav a {
+    color: #686262;
+    padding-right: 20px;
+    text-decoration: none;
+    text-transform: uppercase; }
+  @media (min-width: 768px) {
+    .main-nav {
+      left: calc(50% - 30px + 20px);
+      position: relative; } }
+  @media (min-width: 1200px) {
+    .main-nav {
+      left: calc(58.33333% - 31.66667px + 20px);
+      position: relative; } }
+
+main {
+  background: rgba(0, 0, 0, 0.125);
+  padding: 20px; }
+
+.grid-column-full {
+  box-sizing: content-box;
+  margin-left: 0 !important;
+  padding-left: 10px !important;
+  padding-right: 10px !important; }
+
+aside {
+  background: rgba(0, 0, 0, 0.25);
+  padding: 20px; }
 
 /*# sourceMappingURL=styles.css.map */

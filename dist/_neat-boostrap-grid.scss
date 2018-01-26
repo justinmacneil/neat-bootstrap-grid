@@ -67,13 +67,15 @@ $neat-grids: (
 ) !default;
 
 .row {
-	@include grid-container;
-	.row {
-		@include grid-collapse;
+	@media (min-width: map-get($grid-breakpoints, sm)) {
+		.row {
+			@include grid-collapse;
+		}
 	}
 }
 
 .container {
+	@include grid-container;
 	width: 100%;
 	@media (min-width: map-get($grid-breakpoints, sm)) {
 		padding-right: ($grid-gutter-width / 2);
