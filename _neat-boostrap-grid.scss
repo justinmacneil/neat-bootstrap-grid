@@ -33,6 +33,8 @@ $grid-gutter-widths: (
 	xl: 30px,
 ) !default;
 
+$debug: false !default;
+
 $neat-grid: (
 	columns: $grid-columns,
 	gutter: $grid-gutter-width,
@@ -91,7 +93,9 @@ $neat-grids: (
 	@media (min-width: $grid-breakpoint-width-media) {
 		.container {
 			max-width: map-get($grid-max-widths, $grid-breakpoint-media);
-			@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint-media));
+			@if $debug == true {
+				@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint-media));
+			}
 		}
 		@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
 			@for $i from 1 through $grid-columns {
