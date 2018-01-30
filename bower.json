@@ -4,10 +4,14 @@
   "authors": [
     "justinmacneil <hello@justinmacneil.ca>"
   ],
-  "description": "Bootstrap-style grid classes using Neat",
+  "description": "A lightweight Sass plugin to generate Bootstrap-style column classes using the Neat CSS grid.",
   "main": "core/_neat-bootstrap-grid.scss",
+  "keywords": [
+    "grid",
+    "sass",
+    "neat"
+  ],
   "license": "MIT",
-  "private": true,
   "ignore": [
     "**/.*",
     "node_modules",
