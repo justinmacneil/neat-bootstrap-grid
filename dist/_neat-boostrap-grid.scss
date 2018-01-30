@@ -78,8 +78,8 @@ $neat-grids: (
 	@include grid-container;
 	width: 100%;
 	@media (min-width: map-get($grid-breakpoints, sm)) {
-		padding-right: ($grid-gutter-width / 2);
-		padding-left: ($grid-gutter-width / 2);
+		//padding-right: ($grid-gutter-width / 2);
+		//padding-left: ($grid-gutter-width / 2);
 	}
 	margin-right: auto;
 	margin-left: auto;
@@ -91,15 +91,17 @@ $neat-grids: (
 	}
 }
 
-@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
-	@media (min-width: $grid-breakpoint-width) {
+@each $grid-breakpoint-media, $grid-breakpoint-width-media in $grid-breakpoints {
+	@media (min-width: $grid-breakpoint-width-media) {
 		.container {
-			max-width: map-get($grid-max-widths, $grid-breakpoint);
-			@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint));
+			max-width: map-get($grid-max-widths, $grid-breakpoint-media);
+			@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint-media));
 		}
-		@for $i from 1 through $grid-columns {
-			.col-#{$grid-breakpoint}-#{$i} {
-				@include grid-column($i, map-get($neat-grids, $grid-breakpoint) );
+		@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
+			@for $i from 1 through $grid-columns {
+				.col-#{$grid-breakpoint}-#{$i} {
+					@include grid-column($i, map-get($neat-grids, $grid-breakpoint-media) );
+				}
 			}
 		}
 	}
