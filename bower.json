@@ -19,7 +19,7 @@
     "test",
     "tests"
   ],
-  "devDependencies": {
+  "dependencies": {
     "neat": "^2.1.0"
   }
 }
