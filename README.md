@@ -20,7 +20,7 @@ Install neat-bootstrap-grid using Bower.
 Include any of the Bootstrap grid classes in your markup. 
 
   ```html
-    <html>
+  <html>
     <body>
       <div class="container">
         <div class="row">
