@@ -90,18 +90,22 @@ $neat-grids: (
 	}
 }
 
-@each $grid-breakpoint-media, $grid-breakpoint-width-media in $grid-breakpoints {
-	@media (min-width: $grid-breakpoint-width-media) {
+@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
+	@media (min-width: $grid-breakpoint-width) {
 		.container {
-			max-width: map-get($grid-max-widths, $grid-breakpoint-media);
-			@if $debug == true {
-				@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint-media));
+			max-width: map-get($grid-max-widths, $grid-breakpoint);
+			@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint));
+		}
+		@for $i from 1 through $grid-columns {
+			.col-#{$grid-breakpoint}-#{$i} {
+				@include grid-column($i, map-get($neat-grids, $grid-breakpoint) );
+				outline: 1px solid red;
 			}
 		}
-		@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
+		@each $grid-breakpoint-gutters, $grid-breakpoint-width-gutters in $grid-breakpoints {
 			@for $i from 1 through $grid-columns {
-				.col-#{$grid-breakpoint}-#{$i} {
-					@include grid-column($i, map-get($neat-grids, $grid-breakpoint-media) );
+				.col-#{$grid-breakpoint-gutters}-#{$i} {
+					margin-left: map-get($grid-gutter-widths, $grid-breakpoint);
 				}
 			}
 		}
