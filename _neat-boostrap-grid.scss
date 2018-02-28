@@ -101,7 +101,6 @@ $neat-grids: (
 		@for $i from 1 through $grid-columns {
 			.col-#{$grid-breakpoint}-#{$i} {
 				@include grid-column($i, map-get($neat-grids, $grid-breakpoint) );
-				outline: 1px solid red;
 			}
 		}
 		@each $grid-breakpoint-gutters, $grid-breakpoint-width-gutters in $grid-breakpoints {
