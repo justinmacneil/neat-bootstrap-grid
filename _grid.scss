@@ -71,6 +71,12 @@ $neat-grids: (
 @if $include-css-grids == true {
 	$class-prefix: '.no-cssgrid ';
 	
+	#{$native-class-prefix}.container {
+		width: 100%;
+		margin-right: auto;
+		margin-left: auto;
+	}
+	
 	@for $i from 1 through $grid-columns {
 		#{$native-class-prefix}.col-#{$i} {
 			grid-column: auto / span $i;
