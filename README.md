@@ -36,3 +36,4 @@ Include any of the Bootstrap grid classes in your markup.
     </body>
   </html>
   ```
+To use native CSS grids, ensure ``` $include-css-grids ``` is set to ```true```. By default, neat-bootstrap-grid uses CSS grid classes and applies native grid classes to HTML with the ```.cssgrid``` class and Neat grid classes to HTML with the ```.no-cssgrid``` class. Use [Modernizr's](https://modernizr.com/) grid detection to manage these classes automatically.
