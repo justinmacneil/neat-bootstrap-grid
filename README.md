@@ -9,10 +9,17 @@ neat-bootstrap-grid is a lightweight Sass plugin to generate [Bootstrap](https:/
 
 # Installation
 
-Install neat-bootstrap-grid using Bower.
+Install neat-bootstrap-grid using Bower or Yarn. Alternatively, copy ```_neat-boostrap-grid-standalone.scss``` and ```_grid.scss``` into your project's working directory. Change the ```@import``` path in ```_neat-boostrap-grid-standalone.scss``` to point to your local copy of Neat.
+
+## Bower
 
   ```bash
   bower install neat-bootstrap-grid --save-dev
+  ```
+## Yarn
+
+  ```bash
+  yarn add neat-bootstrap-grid
   ```
 
 # Usage
