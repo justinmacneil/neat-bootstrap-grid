@@ -25,7 +25,7 @@ $grid-gutter-widths: (
 );
 
 @import "reset";
-@import "../../dist/_neat-boostrap-grid.scss";
+@import "../../_neat-boostrap-grid-standalone.scss";
 
 .clearfix:after {
   visibility: hidden;
@@ -42,47 +42,4 @@ $grid-gutter-widths: (
 
 body {
 	font-family: sans-serif;
-}
-
-.logo {
-	background: rgba(0, 0, 0, 0.25);
-	padding: $grid-gutter-width;
-}
-
-.row {
-	@extend .clearfix;
-}
-
-.main-nav {
-	background: rgba(0, 0, 0, 0.125);
-	padding: $grid-gutter-width;
-	a {
-		color: #686262;
-		padding-right: $grid-gutter-width;
-		text-decoration: none;
-		text-transform: uppercase;
-	}
-	@media (min-width: map-get($grid-breakpoints, md)) {
-		@include grid-shift(6);
-	}
-	@media (min-width: map-get($grid-breakpoints, xl)) {
-		@include grid-shift(7);
-	}
-}
-
-main {
-	background: rgba(0, 0, 0, 0.125);
-	padding: $grid-gutter-width;
-}
-
-.grid-column-full {
-	box-sizing: content-box;
-	margin-left: 0 !important;
-	padding-left: $grid-gutter-width / 2 !important;
-	padding-right: $grid-gutter-width / 2 !important;
-}
-
-aside {
-	background: rgba(0, 0, 0, 0.25);
-	padding: $grid-gutter-width;
 }
