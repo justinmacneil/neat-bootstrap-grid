@@ -8,22 +8,20 @@ MIT License
 
 @import "../neat/core/neat";
 
+$debug: false !default;
 $grid-columns:      12 !default;
-$grid-gutter-width: 30px !default;
+$include-css-grids: true !default;
+$class-prefix: '' !default;
+$native-class-prefix: '.cssgrid ' !default;
+
+$grid-breakpoints-iterate: ();
+
 $grid-breakpoints: (
 	xs: 0,
 	sm: 576px,
 	md: 768px,
 	lg: 992px,
 	xl: 1200px,
-) !default;
-
-$grid-max-widths: (
-	xs: none,
-	sm: 540px,
-	md: 720px,
-	lg: 960px,
-	xl: 1140px,
 ) !default;
 
 $grid-gutter-widths: (
@@ -34,12 +32,13 @@ $grid-gutter-widths: (
 	xl: 30px,
 ) !default;
 
-$debug: false !default;
-
-$neat-grid: (
-	columns: $grid-columns,
-	gutter: $grid-gutter-width,
-);
+$grid-max-widths: (
+	xs: none,
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px,
+) !default;
 
 $neat-grids: (
 	xs: (
@@ -69,15 +68,53 @@ $neat-grids: (
 	)
 ) !default;
 
-.row {
-	@media (min-width: map-get($grid-breakpoints, sm)) {
-		.row {
-			@include grid-collapse;
+/* @each $grid-breakpoint, $grid-breakpoint-min-width in $grid-breakpoints {
+	@media (min-width: $grid-breakpoint-min-width) {
+		.container {
+			grid-template-columns: repeat($grid-columns, 1fr);
+			display: grid;
+			grid-column-gap: map-get($grid-gutter-widths, $grid-breakpoint);
+		}
+	}
+} */
+
+@if $include-css-grids == true {
+	$class-prefix: '.no-cssgrid ';
+	
+	@for $i from 1 through $grid-columns {
+		#{$native-class-prefix}.col-#{$i} {
+			grid-column: auto / span $i;
+		}
+	}
+	
+	@each $grid-breakpoint-outer, $grid-breakpoint-min-width in $grid-breakpoints {
+		$grid-breakpoints-iterate: append($grid-breakpoints-iterate, $grid-breakpoint-outer);
+		@media (min-width: $grid-breakpoint-min-width) {
+			#{$native-class-prefix}.container {
+				grid-template-columns: repeat($grid-columns, 1fr);
+				display: grid;
+				grid-column-gap: map-get($grid-gutter-widths, $grid-breakpoint-outer);
+			}
+			@each $grid-breakpoint-inner, $grid-breakpoint-width in $grid-breakpoints-iterate {
+				@for $i from 1 through $grid-columns {
+					#{$native-class-prefix}.col-#{$grid-breakpoint-inner}-#{$i} {
+						grid-column: auto / span $i;
+					}
+				}
+			}
 		}
 	}
 }
 
-.container {
+/* Neat grid (https://neat.bourbon.io/). Use optional no-cssgrid prefix as HTML/body class for older browsers and native CSS grids for browsers with full support. */
+
+@media (min-width: map-get($grid-breakpoints, sm)) {
+	#{$class-prefix}.row {
+		@include grid-collapse;
+	}
+}
+
+#{$class-prefix}.container {
 	@include grid-container;
 	width: 100%;
 	margin-right: auto;
@@ -85,28 +122,26 @@ $neat-grids: (
 }
 
 @for $i from 1 through $grid-columns {
-	.col-#{$i} {
+	#{$class-prefix}.col-#{$i} {
 		@include grid-column($i);
 	}
 }
 
-@each $grid-breakpoint, $grid-breakpoint-width in $grid-breakpoints {
-	@media (min-width: $grid-breakpoint-width) {
-		.container {
-			max-width: map-get($grid-max-widths, $grid-breakpoint);
+$grid-breakpoints-iterate: ();
+
+@each $grid-breakpoint-outer, $grid-breakpoint-min-width in $grid-breakpoints {
+	$grid-breakpoints-iterate: append($grid-breakpoints-iterate, $grid-breakpoint-outer);
+	@media (min-width: $grid-breakpoint-min-width) {
+		#{$class-prefix}.container {
+			max-width: map-get($grid-max-widths, $grid-breakpoint-outer);
 			@if $debug == true {
-				@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint-media));
+				@include grid-visual(rgba(255, 0, 0, 0.2), map-get($neat-grids, $grid-breakpoint-outer));
 			}
 		}
-		@for $i from 1 through $grid-columns {
-			.col-#{$grid-breakpoint}-#{$i} {
-				@include grid-column($i, map-get($neat-grids, $grid-breakpoint) );
-			}
-		}
-		@each $grid-breakpoint-gutters, $grid-breakpoint-width-gutters in $grid-breakpoints {
+		@each $grid-breakpoint-inner, $grid-breakpoint-width in $grid-breakpoints-iterate {
 			@for $i from 1 through $grid-columns {
-				.col-#{$grid-breakpoint-gutters}-#{$i} {
-					margin-left: map-get($grid-gutter-widths, $grid-breakpoint);
+				#{$class-prefix}.col-#{$grid-breakpoint-inner}-#{$i} {
+					@include grid-column($i, map-get($neat-grids, $grid-breakpoint-outer) );
 				}
 			}
 		}
