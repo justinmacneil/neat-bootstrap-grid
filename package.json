@@ -1,6 +1,6 @@
 {
   "name": "neat-bootstrap-grid",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "main": "_neat-boostrap-grid-yarn.scss",
   "repository": "https://github.com/justinmacneil/neat-bootstrap-grid",
   "author": "Justin MacNeil <hello@justinmacneil.ca>",
