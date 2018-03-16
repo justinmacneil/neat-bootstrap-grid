@@ -107,6 +107,9 @@ $neat-grids: (
 					#{$native-class-prefix}.col-#{$grid-breakpoint-inner}-#{$i} {
 						grid-column: auto / span $i;
 					}
+					#{$native-class-prefix}.container .col-#{$grid-breakpoint-inner}-offset-#{$i}, #{$native-class-prefix}.row .col-#{$grid-breakpoint-inner}-offset-#{$i} {
+						grid-column-start: $i + 1; /* Partial support for column offsets using grid-column-start. Only works with the first column in a row. For more advanced use cases, use grid template areas. */
+					}
 				}
 			}
 		}
@@ -148,6 +151,9 @@ $grid-breakpoints-iterate: ();
 			@for $i from 1 through $grid-columns {
 				#{$class-prefix}.col-#{$grid-breakpoint-inner}-#{$i} {
 					@include grid-column($i, map-get($neat-grids, $grid-breakpoint-outer) );
+				}
+				#{$class-prefix}.container .col-#{$grid-breakpoint-inner}-offset-#{$i}, #{$class-prefix}.row .col-#{$grid-breakpoint-inner}-offset-#{$i} {
+					@include grid-shift($i);
 				}
 			}
 		}
