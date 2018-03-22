@@ -5,7 +5,7 @@
     "justinmacneil <hello@justinmacneil.ca>"
   ],
   "description": "A lightweight Sass plugin to generate Bootstrap-style column classes using the Neat CSS grid.",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "_neat-bootstrap-grid.scss",
   "keywords": [
     "grid",
